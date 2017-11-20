@@ -12,17 +12,27 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="shortcut icon" href="pics/favicon.png" type="image/png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69241180-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-69241180-4');
+	</script>
   </head>
   <body>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-11 col-md-6 moneta-padding">
+      <div class="col-11 col-lg-6 moneta-padding">
         <img src="pics/logotype.png" width="128" height="128" class="mx-auto d-block" alt="Moneta.Space Miner">
       </div>
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-11 col-md-6"">
+      <div class="col-11 col-lg-6">
         <p class="lead text-justify">
           Расширение-майнер для заработка на майнинге криптовалюты в фоновом режиме без вложений. Вам не нужно тратить своё время на заработок, так как расширение работает полностью в автоматическом режиме. Майнер начнёт работу сразу после установки. Регистрация не требуется.
         </p>
@@ -30,15 +40,26 @@
     </div>
 
     <div class="row justify-content-center browsers">
-      <div class="col-11 col-md-6">
+      <div class="col-11 col-lg-6">
         <div class="container">
-          <div class="row">
-            <div class="col-6 py-3">
+          <div class="row pb-3">
+
+            <div class="col-6 col-sm py-3 my-3">
               <a href="https://chrome.google.com/webstore/detail/monetaspace-miner/gcnnlhhamnndkbehhmjnlgnlhfjndggl" target="_blank"><img src="pics/chrome.png" class="mx-auto d-block" alt="Moneta.Space Chrome Miner"></a>
             </div>
-            <div class="col-6 py-3">
+
+            <div class="col-6 col-sm py-3 my-3">
               <a href="https://addons.mozilla.org/ru/firefox/addon/moneta-space/" target="_blank"><img src="pics/firefox.png" class="mx-auto d-block" alt="Moneta.Space Firefox Miner"></a>
             </div>
+
+            <div class="col-6 col-sm py-3 my-3">
+              <a href="https://chrome.google.com/webstore/detail/monetaspace-miner/gcnnlhhamnndkbehhmjnlgnlhfjndggl" class="opera" target="_blank" data-container="body" data-toggle="popover" data-placement="top"><img src="pics/opera.png" class="mx-auto d-block" alt="Moneta.Space Opera Miner"></a>
+            </div>
+
+            <div class="col-6 col-sm py-3 my-3">
+              <a href="https://chrome.google.com/webstore/detail/monetaspace-miner/gcnnlhhamnndkbehhmjnlgnlhfjndggl" class="yandex" target="_blank" data-container="body" data-toggle="popover" data-placement="top"><img src="pics/yandex.png" class="mx-auto d-block" alt="Moneta.Space Chrome Miner"></a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -52,12 +73,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?150"></script>
-
-    <!-- VK Widget -->
-    <div id="vk_community_messages"></div>
-    <script type="text/javascript">
-    VK.Widgets.CommunityMessages("vk_community_messages", 156869857, {tooltipButtonText: "Есть вопросы?"});
+    <script>
+      // $(function () {
+      //   $('.yandex').popover({
+      //     content: '123asdfdsfsafasdfasdffasdf',
+      //     html: true
+      //   })
+      // })
+      $(function () {
+        $('[data-toggle="popover"]').click(function() {
+          return false;
+        });
+        $('.opera[data-toggle="popover"]').popover({
+          content: 'Скоро опубликуем в магазине оперы!<br><br>Пока мы его публикуем, у вас есть возможность установить наше расширение другим способом:\
+          <ul>\
+          <li>Установите <a href="https://addons.opera.com/ru/extensions/details/download-chrome-extension-9/?display=en" target="_blank">Download Chrome Extension</a>.</li>\
+          <li>А потом зайдите в <a href="' + $('.yandex[data-toggle="popover"]').attr('href') + '" target="_blank">Chrome Webstore</a> и установите Moneta.Space!</li>\
+          </ul>',
+          html: true,
+          template: '<div class="popover" role="tooltip"><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+        });
+        $('.yandex[data-toggle="popover"]').popover({
+          content: 'Перед установкой расширения следует отключить технологию "Протект", которая блокирует майнер. Зайдите на <a href="browser://protect/" target="_blank">страницу настроек</a> и уберите галку с "Проверять безопасность посещаемых сайтов и загружаемых файлов" и перезапустите браузер.<br><br><a href="' + $('.yandex[data-toggle="popover"]').attr('href') + '" target="_blank">Скачать расширение.</a>',
+          html: true,
+          template: '<div class="popover" role="tooltip"><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+        });
+      })
     </script>
+    
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?150"></script>
+    <div id="vk_community_messages"></div>
+	<script type="text/javascript">
+	VK.Widgets.CommunityMessages("vk_community_messages", 156869857, {disableButtonTooltip: "1"});
+	</script>
   </body>
 </html>
